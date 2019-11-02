@@ -41,7 +41,7 @@ while True:
                        int(center_nose[1]+height_nose/2))
 
         detect.replaced_obj(nose_img,a,width_nose,height_nose,left_up_corner)
-        #left eye
+        """"#left eye
         left_eye_left_side = detect.get_points(face_pose_prediction,gray,face,36)
         left_eye_right_side = detect.get_points(face_pose_prediction, gray, face, 39)
         left_eye_top = detect.get_points(face_pose_prediction,gray,face,37)
@@ -66,7 +66,7 @@ while True:
         left_up_right_eye_corner = (int(right_eye_left_side[0]-7),
                                    int(right_eye_left_side[1] - height_right_eye / 2))
         detect.replaced_obj(right_eye_img, a, width_right_eye, height_right_eye, left_up_right_eye_corner)
-
+        """
         #left brow
         left_brow_left_side = detect.get_points(face_pose_prediction, gray, face, 17)
         left_brow_right_side = detect.get_points(face_pose_prediction, gray, face, 21)
@@ -76,7 +76,7 @@ while True:
         height_left_brow = detect.height_brow(left_brow_left_side,left_brow_top)*2
         left_up_left_brow_corner = (int(left_brow_left_side[0]+15),int(left_brow_left_side[1]-(height_left_brow*1.3)))
         detect.replaced_obj(left_brow_img, a, width_left_brow*2, height_left_brow, left_up_left_brow_corner)
-        #right brow
+        """"#right brow
         right_brow_left_side = detect.get_points(face_pose_prediction, gray, face, 22)
         right_brow_right_side = detect.get_points(face_pose_prediction, gray, face, 26)
         right_brow_top = detect.get_points(face_pose_prediction, gray, face, 24)
@@ -85,10 +85,8 @@ while True:
         height_right_brow = detect.height_brow(right_brow_left_side, right_brow_top)
         left_up_right_brow_corner = (int(right_brow_left_side[0]), int(right_brow_left_side[1] - (height_right_brow * 0.5)))
         detect.replaced_obj(right_brow_img, a, width_right_brow, height_right_brow, left_up_right_brow_corner)
-
-        #cv2.imshow('a',a)
+        """
     cv2.imshow('frame', a)
-    #cv2.imshow('con',contrast)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
